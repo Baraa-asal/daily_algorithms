@@ -19,7 +19,7 @@ function solution(a) {
       occurances[flatMappedArray[i]] = 1;
     }
   }
-  console.log(occurances);
+  
   let max = Math.max(...Object.values(occurances));
   result = Object.keys(occurances).filter((key) => occurances[key] == max);
   return result;
