@@ -24,3 +24,25 @@
 // "ab12c" < "ab2z"
 // Three of these cases match the requirement that s < t, so the answer is 3.
 
+function solution(s, t) {
+  let digitRemovedS = [];
+  let digitRemovedT = [];
+  let result;
+  let count;
+
+  for (let i = 0; i < s.length; i++) {
+    //the following if statement is for testing if the element is a digit
+    if (s[i] > -1 && s[i] < 10) {
+      //this is how i remove a digit from the array and then store the result in a temporary array (digitRemovedS)
+      digitRemovedS = s.slice(0, i).concat(s.slice(i + 1));
+      if (digitRemovedS.localeCompare(t)) {
+        count++;
+      }
+    }
+  }
+  return digitRemovedS;
+}
+
+const s = "ab12c";
+const t = "1zz456";
+console.log(solution(s, t));
