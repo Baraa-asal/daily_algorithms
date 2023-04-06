@@ -15,7 +15,13 @@
 function cloneArray(array) {
     return [...array]; //spread operator
 }
-const originalArray = [1, 2, 3];
+const originalArray = [9,1, 2, 3];
 const clonedArray = cloneArray(originalArray);
+
 console.log(originalArray);
+originalArray.pop() //editting the original array will not affect the cloned one
+console.log(originalArray);
+clonedArray.push('hello'); //editting the cloned array does not affect the original one
 console.log(clonedArray);
+
+
