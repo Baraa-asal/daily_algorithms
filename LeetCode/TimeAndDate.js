@@ -18,8 +18,9 @@ function displayTimeAndDate() {
     //     hours = hours;
     //     period = 'AM';
     // }
-    hours >= 12 ? (hours = hours - 12, period = 'PM') : (hours = hours, period = 'AM');
-    return(`Today is: ${dayOfWeek}. Current time: ${hours} ${period} : ${minutes} : ${seconds}`);
+    hours > 12 ? period = 'PM' : period = 'AM';
+    hours = hours % 12 || 12; //i had an error when this line was before line 21! This line have to be after the ternary operator
+     return(`Today is: ${dayOfWeek}. Current time: ${hours} ${period} : ${minutes} : ${seconds}`);
 }
 
 console.log(displayTimeAndDate())
